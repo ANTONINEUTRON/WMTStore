@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "810854874349",
+    "project_id": "wmtstore-87d5d",
+    "storage_bucket": "wmtstore-87d5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810854874349:android:2885757222506f882820e4",
+        "android_client_info": {
+          "package_name": "com.tech4dev.wmtstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810854874349-e2bpgnjea683e9hf0qujp39qoblgea17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlgJfNaivXNQ4kHOZnqF_YViR79niV-SY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810854874349-e2bpgnjea683e9hf0qujp39qoblgea17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
