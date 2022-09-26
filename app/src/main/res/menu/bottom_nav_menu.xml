@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/navigation_fav"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
         android:title="@string/title_fav"/>
 
     <item
         android:id="@+id/navigation_cart"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="@string/title_cart" />
 
     <item
@@ -23,6 +23,6 @@
 
     <item
         android:id="@+id/navigation_account"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="@string/title_account"/>
 </menu>

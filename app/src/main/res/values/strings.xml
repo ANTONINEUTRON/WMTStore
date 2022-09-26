@@ -4,6 +4,5 @@
     <string name="title_cart">Cart</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_account">Account</string>
-    <string name="title_fav">Favourite</string>
-
+    <string name="title_fav">Favourites</string>
 </resources>
