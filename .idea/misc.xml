@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/activity_main1.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/activity_product_details.xml" value="0.18469431380932022" />
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/fragment_product_details_list_dialog.xml" value="0.18469431380932022" />
+        <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/layout/layout_for_products.xml" value="0.18469431380932022" />
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/menu/bottom_nav_menu.xml" value="0.225" />
         <entry key="..\:/Users/Antoni/AndroidStudioProjects/WMTStore/app/src/main/res/menu/home_menu.xml" value="0.11415134672937152" />
       </map>
