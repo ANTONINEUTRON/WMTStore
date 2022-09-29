@@ -39,7 +39,7 @@ class ProductsAdapter(
 
         //set onclick listener to the item
         holder.itemView.setOnClickListener {
-            ProductDetailsFragment().show(fragmentManager,"tag")
+            ProductDetailsFragment(product).show(fragmentManager,"tag")
         }
     }
 
