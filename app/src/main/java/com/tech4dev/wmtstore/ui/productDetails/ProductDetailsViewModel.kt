@@ -5,13 +5,13 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
+import com.tech4dev.wmtstore.data.models.Product
+import com.tech4dev.wmtstore.data.repository.CartRepository
 
-class ProductDetailsViewModel(application: Application) : AndroidViewModel(application){
-    private val context: Context = application.applicationContext
+class ProductDetailsViewModel() : ViewModel(){
 
-    fun saveToCart(id: String){
-        //access the sharedpreference
-        //get access to the editor
-        //save the id
+    fun saveToCart(product: Product){
+        //add product to repository
+        CartRepository.addToCart(product)
     }
 }

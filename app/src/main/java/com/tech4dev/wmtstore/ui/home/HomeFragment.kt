@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
 
         //Listen for products
         homeViewModel.getAllProducts().observe(viewLifecycleOwner) {listOfFetchedProducts ->
-            binding.listOfProducts.layoutManager = GridLayoutManager(requireContext(), 2)
+            binding.listOfProducts.layoutManager = GridLayoutManager(requireContext(), listOfFetchedProducts.size)
             binding.listOfProducts.adapter = ProductsAdapter(requireContext(), listOfFetchedProducts, childFragmentManager)
         }
     }

@@ -41,11 +41,8 @@ class ProductDetailsFragment(val product: Product) : BottomSheetDialogFragment()
         binding.size.text = product.size
 
         binding.addToCart.setOnClickListener {
-            //get the product id
-            val id: String = product.id ?: ""
-
             //save the id to sharedpreference
-            productDetailsViewModel.saveToCart(id)
+            productDetailsViewModel.saveToCart(product)
 
             //alert user that it has been added to cart
             Toast.makeText(requireContext(), "Saved To Cart", Toast.LENGTH_LONG).show()
