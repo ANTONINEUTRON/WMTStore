@@ -9,6 +9,10 @@ object CartRepository {
         selectedProducts.put(product, 1)
     }
 
+    fun getQuantity(product: Product): Int{
+        return selectedProducts[product]!!
+    }
+
     fun removeFromCart(product: Product){
         selectedProducts.remove(product)
     }

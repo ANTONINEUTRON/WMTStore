@@ -8,6 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.tech4dev.wmtstore.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
@@ -27,7 +30,11 @@ class CartFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var productsInCart = cartViewModel.getProducts()
-        Toast.makeText(requireContext(), "There are ${productsInCart.size} in Cart", Toast.LENGTH_LONG).show()
+
+        binding.itemsInCart.layoutManager = LinearLayoutManager(requireContext())
+        binding.itemsInCart.adapter = CartAdapter(requireContext(), cartViewModel)
+        //Add line separator
+        val dividerItemDecoration = DividerItemDecoration(requireContext(), RecyclerView.VERTICAL)
+        binding.itemsInCart.addItemDecoration(dividerItemDecoration)
     }
 }

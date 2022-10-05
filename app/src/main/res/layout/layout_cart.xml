@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_placeholder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Product name shows here"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="price"
+        app:layout_constraintStart_toStartOf="@id/product_name"
+        app:layout_constraintTop_toBottomOf="@id/product_name"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/decrease_quantity"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:cornerRadius="360dp"
+        app:layout_constraintStart_toStartOf="@id/product_name"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="qty"
+        android:gravity="center"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@id/decrease_quantity"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/increase_quantity"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        app:cornerRadius="360dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/quantity"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
