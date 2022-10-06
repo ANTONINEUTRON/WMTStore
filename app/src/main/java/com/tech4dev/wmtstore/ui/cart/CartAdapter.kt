@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
@@ -33,7 +34,30 @@ class CartAdapter(val context: Context, val cartViewModel: CartViewModel): Recyc
         Glide.with(context).load(product.image).into(holder.image)
 
         //show quantity
-        holder.quantity.text = cartViewModel.getQuantity(product).toString()
+        val quantity = cartViewModel.getQuantity(product)
+        holder.quantity.text = quantity.toString()
+
+        //Remove item from cart
+        holder.deleteBtn.setOnClickListener {
+            cartViewModel.removeFromCart(product)
+            Toast.makeText(context, "${product.name} Deleted Successfully", Toast.LENGTH_LONG).show()
+        }
+
+        //increase quantity
+        holder.increaseQty.setOnClickListener {
+            cartViewModel.increaseQuantity(product)
+        }
+
+        //decrease quantity
+        holder.decreaseQty.setOnClickListener {
+            cartViewModel.decreaseQuantity(product)
+        }
+
+        disableButtonIfQtyis1(quantity, holder.decreaseQty)
+    }
+
+    private fun disableButtonIfQtyis1(quantity: Int, button: MaterialButton) {
+        button.isEnabled = quantity > 1
     }
 
     override fun getItemCount(): Int = listOfSelectedProducts.size

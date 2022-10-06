@@ -16,7 +16,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/checkout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:text="Checkout"
         app:background="@color/purple_700"
         android:textColor="@color/white"
