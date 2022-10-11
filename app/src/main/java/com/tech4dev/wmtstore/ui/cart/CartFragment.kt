@@ -1,5 +1,6 @@
 package com.tech4dev.wmtstore.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +34,12 @@ class CartFragment : Fragment() {
         cartViewModel.getCartLiveData().observe(viewLifecycleOwner){
             initializeRecyclerView()
             showPriceOnCheckoutButton()
+        }
+
+        //set listener to checkout button
+        binding.checkout.setOnClickListener{
+             val i = Intent(requireActivity(), CheckoutActivity::class.java)
+            requireActivity().startActivity(i);
         }
     }
 
