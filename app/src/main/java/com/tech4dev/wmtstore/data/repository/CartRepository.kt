@@ -41,8 +41,9 @@ object CartRepository {
     fun getPrice(): Double{
         var price: Double = 0.0
         for(items in selectedProducts.keys){
-            price =  price + items.price
-
+            val quantity: Int = selectedProducts[items]!!
+            val totalPrice = items.price * quantity
+            price = price + totalPrice
         }
         return price
     }
