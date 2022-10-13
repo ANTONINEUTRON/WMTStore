@@ -1,19 +1,44 @@
 package com.tech4dev.wmtstore.data.favorite_provider
 
-class SharedPreferenceFavorite : FavoriteProvider {
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.lifecycle.MutableLiveData
+
+class SharedPreferenceFavorite(context: Context) : FavoriteProvider {
+    //Created our sharedpreference file
+    private val favoriteStorage: SharedPreferences = context.getSharedPreferences("FAVORITES", Context.MODE_PRIVATE)
+    //Create an editor instance
+    private val editor: SharedPreferences.Editor = favoriteStorage.edit()
+    //Create an instance of a live data
+    private val livedata = MutableLiveData<List<String>>()
+
     override fun addFavorite(productId: String) {
-        TODO("Not yet implemented")
+        editor.putString(productId,productId)
+        editor.apply()
+
+        notifyObservers()
     }
 
     override fun removeFavorite(productId: String) {
-        TODO("Not yet implemented")
+        editor.remove(productId)
+        editor.apply()
+
+        notifyObservers()
     }
 
     override fun isFavorite(productId: String): Boolean {
-        TODO("Not yet implemented")
+        val item: String? = favoriteStorage.getString(productId, "")
+        if(item.isNullOrEmpty()){
+            return false
+        }
+        return true
     }
 
-    override fun getFavoriteItems(): List<String> {
-        TODO("Not yet implemented")
+    override fun getFavoriteItems(): MutableLiveData<List<String>> {
+        return livedata
+    }
+
+    private fun notifyObservers(){
+        livedata.value = favoriteStorage.all.keys.toList()
     }
 }

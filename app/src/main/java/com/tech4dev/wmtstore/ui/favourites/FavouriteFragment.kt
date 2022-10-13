@@ -7,26 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tech4dev.wmtstore.R
+import com.tech4dev.wmtstore.databinding.FragmentFavouriteBinding
 
 class FavouriteFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = FavouriteFragment()
-    }
-
+    private lateinit var fragmentFavouriteBinding: FragmentFavouriteBinding
     private lateinit var viewModel: FavouriteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favourite, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(FavouriteViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        fragmentFavouriteBinding = FragmentFavouriteBinding.inflate(inflater, container, false)
+        return fragmentFavouriteBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        viewModel.getAllFavouriteProducts().observe(viewLifecycleOwner){listOfIds ->
+//            fragmentFavouriteBinding.listOfFavourites
+        }
+    }
 }
