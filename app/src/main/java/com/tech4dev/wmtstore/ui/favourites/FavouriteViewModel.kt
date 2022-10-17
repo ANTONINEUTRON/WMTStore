@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.tech4dev.wmtstore.data.models.Product
 import com.tech4dev.wmtstore.data.repository.FavoriteRepository
 
 class FavouriteViewModel(application: Application) : AndroidViewModel(application) {
@@ -23,5 +24,9 @@ class FavouriteViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun getAllFavouriteProducts(): MutableLiveData<List<String>>{
         return favoriteRepository.getAllFavorites()
+    }
+
+    fun getProductFromIds(listOfIds: List<String>): MutableLiveData<List<Product>> {
+        return favoriteRepository.getProductFromIds(listOfIds)
     }
 }
