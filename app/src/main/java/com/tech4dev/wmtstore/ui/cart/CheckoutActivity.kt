@@ -13,6 +13,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModelProvider
 import com.tech4dev.wmtstore.R
+import com.tech4dev.wmtstore.data.models.Notification
 import com.tech4dev.wmtstore.data.models.Product
 import com.tech4dev.wmtstore.databinding.ActivityCheckoutBinding
 import java.util.*
@@ -79,7 +80,9 @@ class CheckoutActivity : AppCompatActivity() {
     }
 
     private fun saveNotification(message: String) {
+        val notification = Notification(System.currentTimeMillis(), message)
 
+        cartViewModel.saveNotification(notification)
     }
 
     private fun inputIsValid(): Boolean {

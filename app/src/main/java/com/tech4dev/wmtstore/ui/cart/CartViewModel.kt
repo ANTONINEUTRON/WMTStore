@@ -1,12 +1,17 @@
 package com.tech4dev.wmtstore.ui.cart
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.tech4dev.wmtstore.data.models.Notification
 import com.tech4dev.wmtstore.data.models.Product
 import com.tech4dev.wmtstore.data.repository.CartRepository
+import com.tech4dev.wmtstore.data.repository.NotificationRepository
 
-class CartViewModel : ViewModel() {
+class CartViewModel(application: Application) : AndroidViewModel(application) {
+    private val notificationRepo = NotificationRepository(application)
 
     fun getProducts(): List<Product>{
         return CartRepository.getSelectedProducts().keys.toList()
@@ -38,5 +43,9 @@ class CartViewModel : ViewModel() {
 
     fun clearCart(){
         CartRepository.clearCart()
+    }
+
+    fun saveNotification(notification: Notification){
+        notificationRepo.saveNotification(notification)
     }
 }
